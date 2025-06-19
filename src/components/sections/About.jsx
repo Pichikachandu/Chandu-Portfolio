@@ -3,13 +3,15 @@ import { RevealOnScroll } from "../RevealOnScroll";
 export const About = () => {
   const frontendSkills = [
     "React",
-    "Vue",
     "TypeScript",
     "TailwindCSS",
-    "Svelte",
+    "Bootstrap",
+    "HTML3",
+    "CSS3",
+    "JavaScript",
   ];
 
-  const backendSkills = ["Node.js", "Python", "AWS", "MongoDB", "GraphQL"];
+  const backendSkills = ["Node.js", "Python", "AWS", "MongoDB", "MySQL", "Express.js"];
 
   return (
     <section
@@ -65,46 +67,68 @@ export const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4"> 🏫 Education </h3>
+            {/* Education Section */}
+            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 transition-all">
+              <h3 className="text-xl font-bold mb-4">🏫 Education</h3>
               <ul className="list-disc list-inside text-gray-300 space-y-2">
                 <li>
-                  <strong> B.S. in Computer Science </strong> - XYZ University
-                  (2016-2020)
+                  <strong>B.E in Computer Science & Engineering</strong> – T.J.S Engineering College (Affiliated to Anna University) | (2022–2026)
                 </li>
                 <li>
-                  Relevant Coursework: Data Structures, Web Development, Cloud
-                  Computing...
+                  Relevant Coursework: Data Structures, Web Development, Cloud Computing, Operating Systems, Database Management Systems
+                </li>
+              </ul>
+              <br />
+              <ul className="list-disc list-inside text-gray-300 space-y-2">
+                <li>
+                  <strong>Intermediate -MPC(XI-XII)</strong> – Sri Pratibha Junior College | (2020–2022)
+                </li>
+                <li>
+                  Relevant Coursework: Mathematics, Physics, Chemistry
+                </li>
+              </ul>
+              <br />
+              <ul className="list-disc list-inside text-gray-300 space-y-2">
+                <li>
+                  <strong>SSC(X)</strong> – A.P Model School & Junior College | (2019-2020)
+                </li>
+                <li>
+                  Relevant Coursework: General Science, Mathematics, Social Studies, English
                 </li>
               </ul>
             </div>
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4"> 💼 Work Experience </h3>
-              <div className="space-y-4 text-gray-300">
-                <div>
-                  <h4 className="font-semibold">
-                    {" "}
-                    Software Engineer at ABC Corp (2020 - Present){" "}
-                  </h4>
-                  <p>
-                    Developed and maintained microservices for cloud-based
-                    applications.
-                  </p>
-                </div>
 
-                <div>
-                  <h4 className="font-semibold">
-                    {" "}
-                    Intern at DEF Startups (2019){" "}
+            {/* Work Experience Section */}
+            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 transition-all">
+              <h3 className="text-xl font-bold mb-4">💼 Work Experience</h3>
+              <ul className="space-y-6 text-gray-300 list-none">
+                {/* Murven Internship */}
+                <li>
+                  <h4 className="font-semibold text-white">
+                    Web Developer Intern – Murven Design Solutions <span className="text-sm text-gray-400">(Dec 2024 – Feb 2025)</span>
                   </h4>
-                  <p>
-                    Assisted in building front-end components and integration
-                    REST APIs
-                  </p>
-                </div>
-              </div>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Developed a serverless application using Python and AWS Lambda to process PDF files.</li>
+                    <li>Designed a system to take a 4-page PDF and generate a 2x2 layout on a single page for optimized printing.</li>
+                    <li>Created and deployed RESTful API endpoints using Node.js, integrated with AWS Lambda for backend processing.</li>
+                  </ul>
+                </li>
+
+                {/* AWS Project Internship */}
+                <li>
+                  <h4 className="font-semibold text-white">
+                    AWS Project Intern – Naan Mudhalvaan <span className="text-sm text-gray-400">(Nov 2024 – Dec 2024)</span>
+                  </h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Led development of a cloud-hosted virtual classroom using AWS EC2, S3, and RDS for scalable infrastructure.</li>
+                    <li>Built a full-stack web app with Flask (Python) and MySQL, integrating secure APIs and dynamic UI with HTML, CSS, and JavaScript.</li>
+                    <li>Used GitHub for collaboration and optimized costs using AWS Cost Explorer while improving cloud deployment practices.</li>
+                  </ul>
+                </li>
+              </ul>
             </div>
           </div>
+
         </div>
       </RevealOnScroll>
     </section>

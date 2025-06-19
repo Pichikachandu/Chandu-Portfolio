@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import emailjs from "emailjs-com";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,11 +21,15 @@ export const Contact = () => {
         e.target,
         import.meta.env.VITE_PUBLIC_KEY
       )
-      .then((result) => {
-        alert("Message Sent!");
+      .then(() => {
+        toast.success("✅ Message sent successfully!", { position: "top-right" });
         setFormData({ name: "", email: "", message: "" });
       })
-      .catch(() => alert("Oops! Something went wrong. Please try again."));
+      .catch(() =>
+        toast.error("❌ Something went wrong. Please try again.", {
+          position: "top-right",
+        })
+      );
   };
 
   return (
@@ -34,10 +40,16 @@ export const Contact = () => {
       <RevealOnScroll>
         <div className="px-4 w-full min-w-[300px] md:w-[500px] sm:w-2/3 p-6">
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            {" "}
             Get In Touch
           </h2>
+
           <form className="space-y-6" onSubmit={handleSubmit}>
+            <input
+              type="hidden"
+              name="time"
+              value={new Date().toLocaleString()}
+            />
+
             <div className="relative">
               <input
                 type="text"
@@ -91,6 +103,7 @@ export const Contact = () => {
             </button>
           </form>
         </div>
+        <ToastContainer />
       </RevealOnScroll>
     </section>
   );

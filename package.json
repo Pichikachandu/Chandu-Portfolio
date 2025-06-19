@@ -1,6 +1,6 @@
 {
-  "name": "beautiful-portfolio",
-  "homepage": "https://machadop1407.github.io/pedrotech-portfolio",
+  "name": "Pichikachandu",
+  "homepage": "https://github.com/Pichikachandu/Chandu-Portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,10 +13,12 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@tailwindcss/vite": "^4.0.0",
     "emailjs-com": "^3.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-toastify": "^11.0.5",
     "tailwindcss": "^4.0.0"
   },
   "devDependencies": {
