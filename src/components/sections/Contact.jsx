@@ -22,24 +22,24 @@ export const Contact = () => {
         import.meta.env.VITE_PUBLIC_KEY
       )
       .then(() => {
-        toast.success("✅ Message sent successfully!", { position: "top-right" });
+        toast.success("✅ Message sent successfully!");
         setFormData({ name: "", email: "", message: "" });
       })
       .catch(() =>
-        toast.error("❌ Something went wrong. Please try again.", {
-          position: "top-right",
-        })
+        toast.error("❌ Something went wrong. Please try again.")
       );
   };
+
+  const inputClasses = "w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent";
 
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center justify-center py-20"
+      className="min-h-screen flex items-center justify-center py-20 bg-black"
     >
       <RevealOnScroll>
-        <div className="px-4 w-full min-w-[300px] md:w-[500px] sm:w-2/3 p-6">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
+        <div className="w-full max-w-md mx-4 p-8 bg-gray-900 rounded-xl shadow-2xl">
+          <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
             Get In Touch
           </h2>
 
@@ -50,45 +50,54 @@ export const Contact = () => {
               value={new Date().toLocaleString()}
             />
 
-            <div className="relative">
+            <div className="space-y-2">
+              <label htmlFor="name" className="text-gray-300 text-sm font-medium">
+                Name
+              </label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 required
                 value={formData.name}
-                className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                placeholder="Name..."
+                className={inputClasses}
+                placeholder="Your name"
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
               />
             </div>
 
-            <div className="relative">
+            <div className="space-y-2">
+              <label htmlFor="email" className="text-gray-300 text-sm font-medium">
+                Email
+              </label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 required
                 value={formData.email}
-                className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                placeholder="example@gmail.com"
+                className={inputClasses}
+                placeholder="your.email@example.com"
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
               />
             </div>
 
-            <div className="relative">
+            <div className="space-y-2">
+              <label htmlFor="message" className="text-gray-300 text-sm font-medium">
+                Message
+              </label>
               <textarea
                 id="message"
                 name="message"
                 required
                 rows={5}
                 value={formData.message}
-                className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                placeholder="Your Message..."
+                className={inputClasses}
+                placeholder="Your message..."
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
@@ -97,13 +106,13 @@ export const Contact = () => {
 
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+              className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-3 px-6 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/20 active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
             >
               Send Message
             </button>
           </form>
         </div>
-        <ToastContainer />
+        <ToastContainer position="top-right" autoClose={5000} />
       </RevealOnScroll>
     </section>
   );
